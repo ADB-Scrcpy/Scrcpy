@@ -33,7 +33,7 @@ Option definitions are in [options.h](app/src/options.h), and parsing is impleme
 The incoming stream passes through [demuxer.c](app/src/demuxer.c) and [decoder.c](app/src/decoder.c).
 Desktop presentation is handled by [screen.c](app/src/screen.c), with texture handling in [texture.c](app/src/texture.c).
 
-![An Android application mirrored in a compact scrcpy window beside desktop work](app/LOGO1.png)
+![An Android application mirrored in a compact scrcpy window beside desktop work](image/LOGO1.png)
 
 ## Record a demonstration separately from playback
 
